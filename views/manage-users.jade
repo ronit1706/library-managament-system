@@ -1,0 +1,31 @@
+form.form-horizontal(id="add-user-form")
+    fieldset
+        legend Add a new Member
+        .control-group
+          label.control-label(for='input01') Name
+          .controls
+            input#input01.input(type='text', name="name", placeholder="John Doe")
+        .control-group
+          label.control-label(for='input01') E-mail
+          .controls
+            input#input01.input(type='text', name="email", placeholder="doe_j@email.com")
+        .control-group
+          label.control-label(for='input01') Password
+          .controls
+            input#input01.input(type='text', name="password", placeholder="*********")
+        .control-group
+          label.control-label(for='input01') Date of Birth
+          .controls
+            input#input01.input(type='text', name="birth", placeholder="21/12/2012")
+        .control-group
+          label.control-label(for='select01') Membership Type
+          .controls
+            select#select01(name="type")
+              - each due in dues
+                option(value="#{due.type}") #{due.name} - #{due.value}$
+        .form-actions
+          div.alert.alert-info.hide#add-user-status User is succesfully registered.
+          button.btn.btn-primary(type='submit',id="add-user-form-submit-btn") 
+            i.icon-white.icon-plus
+            | Register New User
+
